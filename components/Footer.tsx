@@ -140,12 +140,12 @@ export default function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=nikhilkhatkar34@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "flex", alignItems: "center", gap: "12px", color: "#90A4AE", textDecoration: "none", fontSize: "clamp(0.78rem, 2vw, 0.85rem)" }}
+                style={{ display: "flex", alignItems: "center", gap: "12px", color: "#90A4AE", textDecoration: "none", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", minWidth: 0 }}
               >
                 <span style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(30,136,229,0.15)", border: "1px solid rgba(30,136,229,0.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", flexShrink: 0 }}>
                   ✉️
                 </span>
-                nikhilkhatkar34@gmail.com
+                <span className="break-anywhere">nikhilkhatkar34@gmail.com</span>
               </a>
               <Link href="/book" className="btn-gold" style={{ padding: "10px 20px", fontSize: "0.88rem", marginTop: "4px" }}>
                 Book a Session ✦

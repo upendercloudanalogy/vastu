@@ -15,6 +15,7 @@ export default function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
+        paddingBottom: "clamp(60px, 10vw, 80px)",
         background:
           "radial-gradient(ellipse at 20% 50%, rgba(30, 136, 229, 0.14) 0%, transparent 50%)," +
           "radial-gradient(ellipse at 80% 20%, rgba(66, 165, 250, 0.08) 0%, transparent 50%)," +
@@ -210,10 +211,10 @@ export default function HeroSection() {
           📍 Based in Faridabad, Haryana &nbsp;·&nbsp; Serving clients across all of India online
         </p>
 
-        {/* Trust pills */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "clamp(8px, 3vw, 20px)", marginBottom: "36px", flexWrap: "wrap" }}>
+        {/* Trust pills — 2x2 grid on mobile, single row on desktop */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, auto)", justifyContent: "center", gap: "8px", marginBottom: "36px" }}>
           {["🔢 Numerology", "🏡 Vastu Shastra", "✍️ Name Correction", "💫 Destiny Analysis"].map((item) => (
-            <span key={item} style={{ fontSize: "clamp(0.74rem, 2vw, 0.82rem)", color: "#82CFFF", background: "rgba(30,136,229,0.1)", border: "1px solid rgba(66,165,250,0.2)", borderRadius: "20px", padding: "4px 12px", whiteSpace: "nowrap" }}>
+            <span key={item} style={{ fontSize: "clamp(0.72rem, 1.9vw, 0.82rem)", color: "#82CFFF", background: "rgba(30,136,229,0.1)", border: "1px solid rgba(66,165,250,0.2)", borderRadius: "20px", padding: "6px 12px", textAlign: "center" }}>
               {item}
             </span>
           ))}
@@ -233,18 +234,18 @@ export default function HeroSection() {
         </div>
 
         {/* Stats */}
-        <div className="stats-row" style={{ marginTop: "clamp(40px, 8vw, 64px)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "clamp(8px, 2vw, 16px)", marginTop: "clamp(40px, 8vw, 64px)", width: "100%" }}>
           {[
-            { value: "100+", label: "Clients Guided", icon: "✦" },
-            { value: "4.9★", label: "Average Rating", icon: "⭐" },
-            { value: "5+", label: "Years Practice", icon: "🔢" },
-            { value: "6", label: "Service Types", icon: "🏡" },
+            { value: "100+", label: "Clients Guided" },
+            { value: "4.9★", label: "Avg Rating" },
+            { value: "5+", label: "Yrs Practice" },
+            { value: "6", label: "Services" },
           ].map((stat) => (
-            <div key={stat.label} style={{ textAlign: "center", padding: "16px 20px", background: "rgba(7,26,48,0.5)", border: "1px solid rgba(20,61,122,0.5)", borderRadius: "14px", minWidth: "90px" }}>
-              <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.4rem, 4vw, 2rem)", fontWeight: 700, background: "linear-gradient(135deg, #FFFFFF, #B3E5FC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", lineHeight: 1 }}>
+            <div key={stat.label} style={{ textAlign: "center", padding: "clamp(10px, 2.5vw, 16px) clamp(6px, 2vw, 20px)", background: "rgba(7,26,48,0.5)", border: "1px solid rgba(20,61,122,0.5)", borderRadius: "14px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.1rem, 4vw, 2rem)", fontWeight: 700, background: "linear-gradient(135deg, #FFFFFF, #B3E5FC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", lineHeight: 1 }}>
                 {stat.value}
               </div>
-              <div style={{ color: "#90A4AE", fontSize: "clamp(0.68rem, 1.8vw, 0.78rem)", marginTop: "4px" }}>{stat.label}</div>
+              <div style={{ color: "#90A4AE", fontSize: "clamp(0.6rem, 1.6vw, 0.78rem)", marginTop: "4px" }}>{stat.label}</div>
             </div>
           ))}
         </div>
