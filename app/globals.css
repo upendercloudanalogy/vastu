@@ -1,0 +1,618 @@
+@import "tailwindcss";
+
+/* =============================================
+   BLUE & WHITE COSMIC THEME
+   Blue = North/Water/Vishnu (Vastu)
+   White = Purity/Divine Light (Vastu)
+   ============================================= */
+
+@theme {
+  /* Backgrounds */
+  --color-cosmic-bg: #020C18;
+  --color-cosmic-surface: #071A30;
+  --color-cosmic-card: #0A2040;
+  --color-cosmic-border: #143D7A;
+
+  /* Blues */
+  --color-cosmic-primary: #1E88E5;
+  --color-cosmic-bright: #42A5F5;
+  --color-cosmic-glow: #82CFFF;
+  --color-cosmic-deep: #0D47A1;
+
+  /* White / Light */
+  --color-cosmic-white: #FFFFFF;
+  --color-cosmic-text: #EDF4FF;
+  --color-cosmic-muted: #90A4AE;
+  --color-cosmic-ice: #B3E5FC;
+
+  /* Star gold — keep universal gold for stars/price */
+  --color-cosmic-gold: #FFD700;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020C18;
+  color: #EDF4FF;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Keyframe Animations ────────────────────── */
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  5% { opacity: 0.1; }
+  95% { opacity: 0.06; }
+  100% {
+    transform: translateY(-120px) rotate(180deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes glowPulseBlue {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.35),
+                0 0 30px rgba(66, 165, 250, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 255, 255, 0.65),
+                0 0 55px rgba(66, 165, 250, 0.35);
+  }
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes counterSpin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes sacredPulse {
+  0%, 100% { opacity: 0.03; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.08; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(66, 165, 250, 0.3); }
+  50% { border-color: rgba(66, 165, 250, 0.7); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ── Utility Animation Classes ──────────────── */
+
+.animate-float-up     { animation: floatUp linear infinite; }
+.animate-bounce-soft  { animation: bounceSoft 2s ease-in-out infinite; }
+.animate-shimmer      { animation: shimmer 2s ease-in-out infinite; }
+.animate-slow-spin    { animation: slowSpin 30s linear infinite; }
+.animate-fade-in-up   { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-twinkle      { animation: twinkle 3s ease-in-out infinite; }
+.animate-float-y      { animation: floatY 4s ease-in-out infinite; }
+.animate-counter-spin { animation: counterSpin 25s linear infinite; }
+.animate-border-glow  { animation: borderGlow 3s ease-in-out infinite; }
+
+/* ── Sacred Geometry Divider ────────────────── */
+
+.sacred-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: clamp(40px, 6vw, 64px) auto;
+  max-width: 500px;
+  padding: 0 clamp(16px, 5vw, 24px);
+}
+
+.sacred-divider::before,
+.sacred-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(66, 165, 250, 0.4));
+}
+
+.sacred-divider::after {
+  background: linear-gradient(to left, transparent, rgba(66, 165, 250, 0.4));
+}
+
+.sacred-divider-text {
+  color: #42A5F5;
+  font-size: 1.1rem;
+  letter-spacing: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Enhanced Card ──────────────────────────── */
+
+.mystic-card-premium {
+  background: linear-gradient(135deg, #071A30, #0A2040, #071A30);
+  border: 1px solid rgba(66, 165, 250, 0.4);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+.mystic-card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 80px rgba(30, 136, 229, 0.25), 0 0 40px rgba(66, 165, 250, 0.12);
+}
+
+/* ── Twinkling Star ─────────────────────────── */
+
+.star-twinkle {
+  display: inline-block;
+  color: #FFD700;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* ── Section ornament ───────────────────────── */
+
+.section-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #42A5F5;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+}
+
+/* ── Page hero gradient ─────────────────────── */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: clamp(48px, 8vw, 72px);
+  padding-left: clamp(16px, 5vw, 24px);
+  padding-right: clamp(16px, 5vw, 24px);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(30, 136, 229, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(66, 165, 250, 0.08) 0%, transparent 50%),
+    #020C18;
+  text-align: center;
+}
+
+/* ── Number badge ───────────────────────────── */
+
+.num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(66, 165, 250, 0.4);
+  background: rgba(30, 136, 229, 0.1);
+  color: #42A5F5;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Display Font ───────────────────────────── */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ── Gradient Text ──────────────────────────── */
+
+/* White → ice-blue (replaces gold gradient) */
+.text-white-gradient {
+  background: linear-gradient(135deg, #FFFFFF, #B3E5FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sky blue → primary blue (replaces purple gradient) */
+.text-blue-gradient {
+  background: linear-gradient(135deg, #42A5F5, #1E88E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Legacy aliases for any old class names in JSX */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFFFFF, #B3E5FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-purple-gradient {
+  background: linear-gradient(135deg, #42A5F5, #1E88E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Cards ──────────────────────────────────── */
+
+.mystic-card {
+  background: linear-gradient(135deg, #071A30, #0A2040);
+  border: 1px solid #143D7A;
+  border-radius: 16px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mystic-card:hover {
+  border-color: #42A5F5;
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 60px rgba(30, 136, 229, 0.18),
+    0 0 30px rgba(66, 165, 250, 0.1);
+}
+
+/* ── Buttons ────────────────────────────────── */
+
+/* Primary = white button with deep blue text */
+.btn-gold {
+  background: linear-gradient(135deg, #FFFFFF, #E3F2FD);
+  color: #020C18;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 14px 32px;
+  transition: all 0.3s ease;
+  animation: glowPulseBlue 2.5s ease-in-out infinite;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Secondary = blue outline button */
+.btn-outline {
+  background: transparent;
+  color: #EDF4FF;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 13px 32px;
+  transition: all 0.3s ease;
+  border: 2px solid #1E88E5;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: rgba(30, 136, 229, 0.15);
+  border-color: #42A5F5;
+  transform: translateY(-2px);
+}
+
+/* ── Section title ──────────────────────────── */
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ── Inputs ─────────────────────────────────── */
+
+.mystic-input {
+  background: rgba(20, 61, 122, 0.25);
+  border: 1px solid #143D7A;
+  border-radius: 10px;
+  color: #EDF4FF;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.mystic-input:focus {
+  border-color: #1E88E5;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+}
+
+.mystic-input::placeholder {
+  color: #607D8B;
+}
+
+.mystic-input option {
+  background: #071A30;
+  color: #EDF4FF;
+}
+
+/* ── Stars ──────────────────────────────────── */
+
+.star-filled {
+  color: #FFD700;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ── Divider ────────────────────────────────── */
+
+.mystic-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #143D7A, transparent);
+  margin: 0 auto;
+}
+
+/* ── Floating WhatsApp ──────────────────────── */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  animation: bounceSoft 2s ease-in-out infinite;
+}
+
+/* ── Scrollbar ──────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020C18; }
+::-webkit-scrollbar-thumb { background: #143D7A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1E88E5; }
+
+/* ── Navbar ─────────────────────────────────── */
+.desktop-nav { display: flex; }
+.mobile-menu-btn { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ── Responsive Utilities ───────────────────── */
+
+/* Button row — stacks vertically on small screens */
+.btn-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Stats row — centers and wraps stat cards */
+.stats-row {
+  display: flex;
+  gap: clamp(12px, 4vw, 24px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Badge / pill that should wrap its text on small screens */
+.badge-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ── Mobile Breakpoints ─────────────────────── */
+
+@media (max-width: 480px) {
+  /* Stack CTA button rows vertically */
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-row > a,
+  .btn-row > button,
+  .btn-row > * {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* WhatsApp float smaller on mobile */
+  .whatsapp-float {
+    width: 52px !important;
+    height: 52px !important;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Reduce button padding on very small screens */
+  .btn-gold,
+  .btn-outline {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Collapse hero badge text */
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    text-align: center;
+  }
+
+  /* Tighter mystic-card padding on mobile */
+  .mystic-card {
+    padding: 20px 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce section vertical padding on tablets/phones */
+  .mobile-section-pad {
+    padding-top: clamp(48px, 8vw, 80px) !important;
+    padding-bottom: clamp(48px, 8vw, 80px) !important;
+    padding-left: clamp(16px, 4vw, 24px) !important;
+    padding-right: clamp(16px, 4vw, 24px) !important;
+  }
+
+  /* Stats row: tighten gap on mobile */
+  .stats-row {
+    gap: clamp(12px, 4vw, 16px) !important;
+  }
+
+  /* Reduce inner container padding on mobile */
+  .mobile-container-pad {
+    padding: clamp(16px, 4vw, 24px) !important;
+  }
+
+  /* Footer: enforce 2-column on tablet */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(24px, 4vw, 40px) !important;
+  }
+}
+
+/* ── Sacred Gold System ────────────────────── */
+:root {
+  --gold: #D4AF37;
+  --gold-light: #E8C840;
+  --gold-dim: rgba(212, 175, 55, 0.06);
+}
+
+@keyframes floatUpGold {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  8%   { opacity: 0.45; }
+  92%  { opacity: 0.22; }
+  100% { transform: translateY(-100vh) scale(0.6); opacity: 0; }
+}
+
+@keyframes moonGlow {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.06); }
+}
+
+@keyframes auricPulse {
+  0%, 100% { opacity: 0.04; transform: translate(-50%,-50%) scale(1); }
+  50%       { opacity: 0.09; transform: translate(-50%,-50%) scale(1.07); }
+}
+
+@keyframes constellationFade {
+  0%, 100% { opacity: 0.035; }
+  50%       { opacity: 0.07; }
+}
+
+@keyframes yantriSpin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* Lotus divider */
+.lotus-divider {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: clamp(40px,6vw,64px) auto;
+  padding: 0 clamp(16px,5vw,24px);
+  max-width: 700px;
+}
+.lotus-divider::before,
+.lotus-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,175,55,0.35));
+}
+.lotus-divider::after {
+  background: linear-gradient(to left, transparent, rgba(212,175,55,0.35));
+}
+.lotus-divider-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  color: rgba(212,175,55,0.55);
+  font-size: 1.1rem;
+  letter-spacing: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Aura ring behind headings */
+.aura-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.08);
+  animation: auricPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Sacred card frame */
+.sacred-frame {
+  position: relative;
+}
+.sacred-frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 40%, transparent 60%, rgba(212,175,55,0.05));
+  pointer-events: none;
+  z-index: 0;
+}
