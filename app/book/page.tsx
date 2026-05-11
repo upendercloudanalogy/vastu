@@ -5,10 +5,10 @@ import LotusDivider from "@/components/LotusDivider";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Book Vastu or Numerology Session | Monika Faridabad",
+  title: "Book Vastu or Numerology Session | Monika Faridabad | Shivoham Guidance Faridabad",
   description:
-    "Book Vastu or numerology consultation with Monika, Faridabad. WhatsApp response in 24 hours. Sessions from ₹2,100. Online — serving all of India.",
-  alternates: { canonical: "https://monika-numerology.com/book" },
+    "Book Vastu or numerology consultation with Shivoham Guidance, Faridabad. WhatsApp response in 24 hours. Sessions from ₹2,100. Online — serving all of India.",
+  alternates: { canonical: "https://www.shivohamguidance.com/book" },
 };
 
 const packages = [
@@ -23,7 +23,7 @@ const packages = [
 export default function BookPage() {
   return (
     <>
-      <StructuredData pageType="book" breadcrumbs={[{ name: "Book a Session", url: "https://monika-numerology.com/book" }]} />
+      <StructuredData pageType="book" breadcrumbs={[{ name: "Book a Session", url: "https://www.shivohamguidance.com/book" }]} />
       {/* Hero */}
       <section className="page-hero">
         {/* Decorative rings */}

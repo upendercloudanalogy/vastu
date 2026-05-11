@@ -9,17 +9,17 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ breadcrumbs, pageType = "home" }: StructuredDataProps) {
-  const BASE_URL = "https://monika-numerology.com";
+  const BASE_URL = "https://www.shivohamguidance.com";
 
   // 1. ProfessionalService — more specific than LocalBusiness, ranks better for consultants
   const professionalService = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${BASE_URL}/#business`,
-    name: "Monika Numerology & Vastu",
-    alternateName: "Monika Vastu Consultant Faridabad",
+    name: "Shivoham Guidance",
+    alternateName: "Monika Vastu Consultant",
     description:
-      "Certified Vastu Shastra consultant and numerologist in Faridabad, Haryana. Expert in numerology readings by date of birth, name correction, home Vastu, new construction Vastu, and commercial Vastu for hotels, hospitals and offices. Serving clients across Faridabad, Delhi NCR, and all of India online via WhatsApp.",
+      "Certified Vastu Shastra consultant and numerologist in Faridabad, Haryana. Expert in numerology readings by date of birth, name correction, home Vastu, new construction Vastu, and commercial Vastu for hotels, hospitals and offices. Serving clients across Serving clients across Delhi, Mumbai, Bangalore, Hyderabad, Pune, Chennai, Kolkata and all of India online via WhatsApp.",
     url: BASE_URL,
     telephone: "+917027510541",
     email: "nikhilkhatkar34@gmail.com",
@@ -43,12 +43,14 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
       longitude: "77.3178",
     },
     areaServed: [
-      { "@type": "City", name: "Faridabad" },
-      { "@type": "City", name: "Delhi" },
-      { "@type": "City", name: "Gurugram" },
-      { "@type": "City", name: "Noida" },
-      { "@type": "State", name: "Haryana" },
       { "@type": "Country", name: "India" },
+      { "@type": "City", name: "Delhi" },
+      { "@type": "City", name: "Mumbai" },
+      { "@type": "City", name: "Bangalore" },
+      { "@type": "City", name: "Hyderabad" },
+      { "@type": "City", name: "Pune" },
+      { "@type": "City", name: "Chennai" },
+      { "@type": "City", name: "Kolkata" }
     ],
     serviceArea: {
       "@type": "GeoShape",
@@ -172,7 +174,7 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody: "Monika's numerology reading was incredibly accurate. She identified exactly the challenges I was facing and gave me a clear roadmap. My life has truly transformed after following her guidance.",
         datePublished: "2024-11-15",
-        publisher: { "@type": "Organization", name: "Monika Numerology & Vastu" },
+        publisher: { "@type": "Organization", name: "Shivoham Guidance" },
       },
       {
         "@type": "Review",
@@ -180,7 +182,7 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody: "The Vastu consultation for my home was life-changing. After implementing Monika's suggestions, the energy in our house completely shifted. Business has improved and family harmony is at its best.",
         datePublished: "2024-12-01",
-        publisher: { "@type": "Organization", name: "Monika Numerology & Vastu" },
+        publisher: { "@type": "Organization", name: "Shivoham Guidance" },
       },
       {
         "@type": "Review",
@@ -188,7 +190,7 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody: "After Monika's name correction, I started getting better opportunities at work within 3 months. Truly amazed by the accuracy and practical guidance!",
         datePublished: "2025-01-10",
-        publisher: { "@type": "Organization", name: "Monika Numerology & Vastu" },
+        publisher: { "@type": "Organization", name: "Shivoham Guidance" },
       },
     ],
     sameAs: [
@@ -343,17 +345,35 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
     ],
   } : null;
 
+  // return (
+  //   <>
+  //     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalService) }} />
+  //     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+  //     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+  //     {pageType === "home" && (
+  //       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+  //     )}
+  //     {breadcrumbSchema && (
+  //       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+  //     )}
+  //   </>
+  // );
+
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      professionalService,
+      personSchema,
+      websiteSchema,
+      ...(pageType === "home" ? [faqSchema] : []),
+      ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+    ],
+  };
+
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalService) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      {pageType === "home" && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
-      {breadcrumbSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      )}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+    />
   );
 }

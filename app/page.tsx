@@ -8,10 +8,10 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import LotusDivider from "@/components/LotusDivider";
 
 export const metadata: Metadata = {
-  title: "Vastu Consultant & Numerologist in Faridabad | Monika",
+  title: "Shivoham Guidance | Vastu Consultant & Numerologist in Faridabad",
   description:
     "Certified Vastu & numerology consultant in Faridabad. Numerology readings, name correction & home Vastu. Serving all India online. Book via WhatsApp.",
-  alternates: { canonical: "https://monika-numerology.com" },
+  alternates: { canonical: "https://www.shivohamguidance.com" },
 };
 
 const pricingData = [

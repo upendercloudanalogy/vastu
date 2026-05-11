@@ -5,21 +5,21 @@ import LotusDivider from "@/components/LotusDivider";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Vastu & Numerology Reviews Faridabad | Monika – 4.9★",
+  title: "100+ Reviews for Vastu & Numerology in Faridabad | Shivoham Guidance (4.9★)",
   description:
-    "100+ genuine reviews for Monika's Vastu & numerology consultations in Faridabad. Rated 4.9/5. Real transformation stories from across India.",
-  alternates: { canonical: "https://monika-numerology.com/ratings" },
+    "100+ genuine reviews for Shivoham Guidance's Vastu & numerology consultations in Faridabad. Rated 4.9/5. Real transformation stories from across India.",
+  alternates: { canonical: "https://www.shivohamguidance.com/ratings" },
 };
 
 export default function RatingsPage() {
   return (
     <>
-      <StructuredData pageType="ratings" breadcrumbs={[{ name: "Client Reviews", url: "https://monika-numerology.com/ratings" }]} />
+      <StructuredData pageType="ratings" breadcrumbs={[{ name: "Client Reviews", url: "https://www.shivohamguidance.com/ratings" }]} />
       {/* Hero */}
       <section className="page-hero">
         {/* Zodiac wheel SVG watermark */}
         {(() => {
-          const ZODIAC = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"] as const;
+          const ZODIAC = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"] as const;
           return (
             <svg
               viewBox="0 0 300 300"
@@ -47,8 +47,8 @@ export default function RatingsPage() {
                 return (
                   <line
                     key={i}
-                    x1={150 + 0   * Math.cos(rad)}
-                    y1={150 + 0   * Math.sin(rad)}
+                    x1={150 + 0 * Math.cos(rad)}
+                    y1={150 + 0 * Math.sin(rad)}
                     x2={150 + 130 * Math.cos(rad)}
                     y2={150 + 130 * Math.sin(rad)}
                     stroke="#D4AF37"
@@ -86,8 +86,8 @@ export default function RatingsPage() {
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: "clamp(200px, 55vw, 500px)", height: "clamp(200px, 55vw, 500px)", borderRadius: "50%", border: "1px solid rgba(66,165,250,0.05)", animation: "counterSpin 30s linear infinite", pointerEvents: "none" }} />
 
         {/* Twinkling stars */}
-        {[{t:"12%",l:"6%",d:"0s"},{t:"20%",r:"8%",d:"1s"},{t:"75%",l:"4%",d:"0.5s"},{t:"65%",r:"5%",d:"1.5s"}].map((s,i)=>(
-          <div key={i} style={{ position:"absolute", top:s.t, left:(s as {l?:string}).l, right:(s as {r?:string}).r, width:"5px", height:"5px", borderRadius:"50%", background:"#42A5F5", boxShadow:"0 0 6px #42A5F5", animation:`twinkle 3s ease-in-out ${s.d} infinite`, pointerEvents:"none" }} />
+        {[{ t: "12%", l: "6%", d: "0s" }, { t: "20%", r: "8%", d: "1s" }, { t: "75%", l: "4%", d: "0.5s" }, { t: "65%", r: "5%", d: "1.5s" }].map((s, i) => (
+          <div key={i} style={{ position: "absolute", top: s.t, left: (s as { l?: string }).l, right: (s as { r?: string }).r, width: "5px", height: "5px", borderRadius: "50%", background: "#42A5F5", boxShadow: "0 0 6px #42A5F5", animation: `twinkle 3s ease-in-out ${s.d} infinite`, pointerEvents: "none" }} />
         ))}
 
         <div style={{ position: "relative", zIndex: 1 }}>

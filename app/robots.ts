@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://monika-numerology.com/sitemap.xml",
-    host: "https://monika-numerology.com",
+    sitemap: "https://www.shivohamguidance.com/sitemap.xml",
+    host: "https://www.shivohamguidance.com",
   };
 }

@@ -5,10 +5,10 @@ import LotusDivider from "@/components/LotusDivider";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Vastu & Numerology Fees in Faridabad | Monika",
+  title: "Vastu & Numerology Fees in Faridabad | Shivoham Guidance | Monika Faridabad",
   description:
-    "Vastu & numerology fees by Monika, Faridabad. Numerology from ₹2,100. Vastu for home, new construction & commercial properties. Serving pan India.",
-  alternates: { canonical: "https://monika-numerology.com/payments" },
+    "Vastu & numerology fees by Shivoham Guidance, Faridabad. Numerology from ₹2,100. Vastu for home, new construction & commercial properties. Serving pan India.",
+  alternates: { canonical: "https://www.shivohamguidance.com/payments" },
 };
 
 const numerologyPackages = [
@@ -88,7 +88,7 @@ function SectionHeading({ label, title, highlight }: { label: string; title: str
 export default function PaymentsPage() {
   return (
     <>
-      <StructuredData pageType="payments" breadcrumbs={[{ name: "Pricing & Services", url: "https://monika-numerology.com/payments" }]} />
+      <StructuredData pageType="payments" breadcrumbs={[{ name: "Pricing & Services", url: "https://www.shivohamguidance.com/payments" }]} />
       {/* Hero */}
       <section className="page-hero" style={{ paddingTop: "120px", paddingBottom: "clamp(40px, 6vw, 60px)" }}>
         {/* Decorative rings */}
