@@ -162,8 +162,8 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "100",
+      ratingValue: "5.0",  // ← Use your actual average
+      reviewCount: "6",    // ← Use your ACTUAL number of real reviews
       bestRating: "5",
       worstRating: "1",
     },
