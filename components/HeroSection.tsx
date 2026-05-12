@@ -236,8 +236,8 @@ export default function HeroSection() {
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "clamp(8px, 2vw, 16px)", marginTop: "clamp(40px, 8vw, 64px)", width: "100%" }}>
           {[
-            { value: "100+", label: "Clients Guided" },
-            { value: "4.9★", label: "Avg Rating" },
+            { value: "6", label: "Clients Guided" },
+            { value: "5★", label: "Avg Rating" },
             { value: "5+", label: "Yrs Practice" },
             { value: "6", label: "Services" },
           ].map((stat) => (

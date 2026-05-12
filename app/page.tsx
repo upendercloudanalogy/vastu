@@ -103,8 +103,8 @@ export default function Home() {
             </h2>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(30, 136, 229, 0.1)", border: "1px solid rgba(30, 136, 229, 0.3)", borderRadius: "30px", padding: "8px 20px", marginBottom: "16px" }}>
               <span style={{ color: "#FFD700", fontSize: "1.1rem" }}>★★★★★</span>
-              <span style={{ color: "#FFFFFF", fontWeight: 700 }}>4.9 / 5</span>
-              <span style={{ color: "#90A4AE", fontSize: "0.85rem" }}>from 100+ clients</span>
+              <span style={{ color: "#FFFFFF", fontWeight: 700 }}>5.0 / 5</span>
+              <span style={{ color: "#90A4AE", fontSize: "0.85rem" }}>from 6 clients</span>
             </div>
           </div>
 

@@ -271,7 +271,7 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
         name: "Who is the best Vastu consultant in Faridabad?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Monika is a highly rated Vastu Shastra consultant in Faridabad, Haryana with 100+ satisfied clients and a 4.9/5 average rating. She offers online Vastu consultations for homes, new construction, old homes, and commercial properties, serving clients across Faridabad, Delhi NCR, and all of India.",
+          text: "Monika is a highly rated Vastu Shastra consultant in Faridabad, Haryana with 6+ satisfied clients and a 5.0/5 average rating. She offers online Vastu consultations for homes, new construction, old homes, and commercial properties, serving clients across Faridabad, Delhi NCR, and all of India.",
         },
       },
       {

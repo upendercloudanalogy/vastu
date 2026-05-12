@@ -5,9 +5,8 @@ import LotusDivider from "@/components/LotusDivider";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "100+ Reviews for Vastu & Numerology in Faridabad | Shivoham Guidance (4.9★)",
-  description:
-    "100+ genuine reviews for Shivoham Guidance's Vastu & numerology consultations in Faridabad. Rated 4.9/5. Real transformation stories from across India.",
+ title: "Client Reviews for Vastu & Numerology in Faridabad | Shivoham Guidance (5.0★)",
+  description: "Genuine client reviews for Shivoham Guidance's Vastu & numerology consultations in Faridabad. Rated 5.0/5. Real transformation stories from across India.",
   alternates: { canonical: "https://www.shivohamguidance.com/ratings" },
 };
 
@@ -114,9 +113,9 @@ export default function RatingsPage() {
           {/* Rating Stats */}
           <div className="stats-row" style={{ maxWidth: "600px", margin: "0 auto" }}>
             {[
-              { label: "Average Rating", value: "4.9 / 5", icon: "⭐" },
-              { label: "Happy Clients", value: "100+", icon: "🌟" },
-              { label: "5-Star Reviews", value: "95%", icon: "✦" },
+              { label: "Average Rating", value: "5.0 / 5", icon: "⭐" },
+              { label: "Happy Clients", value: "6", icon: "🌟" },        // ← Changed from 100+ to 6
+              { label: "5-Star Reviews", value: "100%", icon: "✦" },     // ← Changed from 95% to 100%
             ].map((stat) => (
               <div key={stat.label} style={{ textAlign: "center", padding: "clamp(16px, 4vw, 22px) clamp(20px, 5vw, 32px)", background: "rgba(7,26,48,0.8)", border: "1px solid #143D7A", borderRadius: "16px", flex: "1 1 120px" }}>
                 <div style={{ fontSize: "clamp(22px, 5vw, 32px)", marginBottom: "8px" }}>{stat.icon}</div>
@@ -151,7 +150,7 @@ export default function RatingsPage() {
             </span>
           </h2>
           <p style={{ color: "#90A4AE", marginBottom: "32px", lineHeight: 1.8, fontSize: "clamp(0.88rem, 2vw, 1rem)" }}>
-            Join hundreds of satisfied clients and let Monika guide you toward your best life through the ancient wisdom of numerology and Vastu Shastra.
+             Join satisfied clients and let Monika guide you toward your best life through the ancient wisdom of numerology and Vastu Shastra.
           </p>
           <div className="btn-row" style={{ justifyContent: "center" }}>
             <Link href="/book" className="btn-gold">✦ Book Your Session</Link>
