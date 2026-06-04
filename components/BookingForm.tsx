@@ -55,9 +55,7 @@ export default function BookingForm() {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-      console.log("EmailJS sending with:", { serviceId, templateId, publicKey: publicKey?.slice(0, 6) + "..." });
-
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceId,
         templateId,
         {
@@ -72,11 +70,9 @@ export default function BookingForm() {
         },
         { publicKey }
       );
-      console.log("EmailJS success:", result.status, result.text);
       setSubmitted(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : JSON.stringify(err);
-      console.error("EmailJS error:", err);
       setSubmitted(true);
       setError(`Email error: ${msg}`);
     } finally {

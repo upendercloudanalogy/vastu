@@ -40,6 +40,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -66,12 +68,12 @@ body {
 
 @keyframes glowPulseBlue {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.35),
-                0 0 30px rgba(66, 165, 250, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
+                0 0 20px rgba(66, 165, 250, 0.15);
   }
   50% {
-    box-shadow: 0 0 28px rgba(255, 255, 255, 0.65),
-                0 0 55px rgba(66, 165, 250, 0.35);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.35),
+                0 0 35px rgba(66, 165, 250, 0.25);
   }
 }
 
@@ -413,15 +415,77 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: #1E88E5; }
 
 /* ── Navbar ─────────────────────────────────── */
-.desktop-nav { display: flex; }
-.mobile-menu-btn { display: none; }
+
+/* Hidden checkbox that drives the mobile menu open/close state.
+   display:none works fine with <label htmlFor> in all modern browsers
+   AND prevents focus from scrolling the page to the top. */
+.nav-menu-toggle {
+  display: none;
+}
+
+.desktop-nav {
+  display: flex;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.mobile-menu-panel {
+  display: none;
+}
 
 @media (max-width: 768px) {
-  .desktop-nav { display: none !important; }
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Hamburger label — large tap target, no synthetic event issues on iOS */
   .mobile-menu-btn {
     display: flex !important;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    gap: 5px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #EDF4FF;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* When checkbox is checked: animate hamburger into an X and show menu */
+  .nav-menu-toggle:checked ~ .site-nav .hamburger-bar-1 {
+    transform: translateY(7px) rotate(45deg);
+    background: #42A5F5;
+  }
+  .nav-menu-toggle:checked ~ .site-nav .hamburger-bar-2 {
+    opacity: 0;
+  }
+  .nav-menu-toggle:checked ~ .site-nav .hamburger-bar-3 {
+    transform: translateY(-7px) rotate(-45deg);
+    background: #42A5F5;
+  }
+
+  .nav-menu-toggle:checked ~ .site-nav .mobile-menu-panel {
+    display: block;
+    background: rgba(2, 12, 24, 0.98);
+    border-top: 1px solid #143D7A;
+    padding: 16px 24px 24px;
+    position: relative;
+    z-index: 999;
   }
 }
 
@@ -525,6 +589,22 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: clamp(24px, 4vw, 40px) !important;
   }
+}
+
+/* Footer: single column on narrow phones (Galaxy S8+, iPhone SE, etc.)
+   so long emails / phone numbers don't overflow the column. */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: clamp(28px, 6vw, 40px) !important;
+  }
+}
+
+/* Anywhere a long unbroken string (email, URL) needs to wrap. */
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
 }
 
 /* ── Sacred Gold System ────────────────────── */

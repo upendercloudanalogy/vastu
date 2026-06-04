@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Monika Faridabad",
   },
   description:
-    "Certified Vastu & numerology consultant in Faridabad, Haryana. Expert in numerology readings, name correction & home Vastu. Serving all of India online. Book via WhatsApp today.",
+    "Certified Vastu & numerology consultant in Faridabad, Haryana. Numerology readings, name correction & home Vastu — serving all of India online.",
   keywords: [
     // Local keywords (highest conversion)
     "vastu consultant faridabad",
@@ -65,24 +65,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://monika-numerology.com",
     siteName: "Monika Numerology & Vastu",
-    title: "Monika | Vastu Consultant & Numerologist in Faridabad, Haryana",
+    title: "Monika | Vastu Consultant & Numerologist, Faridabad",
     description:
-      "Certified Vastu Shastra consultant and numerologist based in Faridabad, Haryana. Expert numerology readings, name correction, and complete Vastu consultations for homes & businesses across India.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Monika - Vastu Consultant & Numerologist in Faridabad",
-      },
-    ],
+      "Certified Vastu & numerology consultant in Faridabad, Haryana. Numerology readings, name correction & Vastu for homes/business across India.",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Monika | Vastu Consultant & Numerologist in Faridabad",
+    card: "summary",
+    title: "Monika | Vastu Consultant & Numerologist, Faridabad",
     description:
       "Certified Vastu & numerology consultant in Faridabad, Haryana. Book your personal session via WhatsApp — serving all of India online.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -107,11 +98,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="antialiased" style={{ position: "relative" }}>
+   <body className="antialiased">
         <CosmicBackground />
+        <Navbar />
         <div style={{ position: "relative", zIndex: 1 }}>
           <StructuredData />
-          <Navbar />
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
