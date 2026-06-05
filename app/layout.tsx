@@ -21,10 +21,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://monika-numerology.com"),
+  metadataBase: new URL("https://www.shivohamguidance.com"),
   title: {
-    default: "Vastu Consultant & Numerologist in Faridabad | Monika",
-    template: "%s | Monika Faridabad",
+   default: "Shivoham Guidance | Vastu Consultant & Numerologist in Faridabad",
+    template: "%s | Shivoham Guidance",
   },
   description:
     "Certified Vastu & numerology consultant in Faridabad, Haryana. Numerology readings, name correction & home Vastu — serving all of India online.",
@@ -57,24 +57,31 @@ export const metadata: Metadata = {
     "vastu for business",
     "commercial vastu consultant",
   ],
-  authors: [{ name: "Monika", url: "https://monika-numerology.com" }],
+  authors: [
+  {
+    name: "Monika",
+    url: "https://www.shivohamguidance.com",
+  },
+],
   creator: "Monika",
-  publisher: "Monika Numerology & Vastu",
+  publisher: "Shivoham Guidance",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://monika-numerology.com",
-    siteName: "Monika Numerology & Vastu",
-    title: "Monika | Vastu Consultant & Numerologist, Faridabad",
+     url: "https://www.shivohamguidance.com",
+    siteName: "Shivoham Guidance",
+     title: "Shivoham Guidance | Vastu Consultant & Numerologist, Faridabad",
     description:
       "Certified Vastu & numerology consultant in Faridabad, Haryana. Numerology readings, name correction & Vastu for homes/business across India.",
+      images: ["/og-image.png"],
   },
-  twitter: {
-    card: "summary",
-    title: "Monika | Vastu Consultant & Numerologist, Faridabad",
-    description:
-      "Certified Vastu & numerology consultant in Faridabad, Haryana. Book your personal session via WhatsApp — serving all of India online.",
-  },
+ twitter: {
+  card: "summary_large_image",
+  title: "Shivoham Guidance | Vastu Consultant, Faridabad",
+  description:
+    "Certified Vastu & numerology consultant in Faridabad, Haryana. Book your session online.",
+  images: ["/og-image.png"],
+},
   robots: {
     index: true,
     follow: true,
@@ -98,7 +105,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${inter.variable} ${cormorant.variable}`}>
-   <body className="antialiased">
+      <body className="antialiased">
         <CosmicBackground />
         <Navbar />
         <div style={{ position: "relative", zIndex: 1 }}>
