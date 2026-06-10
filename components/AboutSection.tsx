@@ -6,7 +6,7 @@ export default function AboutSection() {
     { icon: "✦", text: "Specialized in Advanced Numerology & Destiny Analysis" },
     { icon: "🏡", text: "Expert in Vastu-Based Energy Alignment for Homes & Businesses" },
     { icon: "🔢", text: "Certified in Name Correction & Numerological Analysis" },
-    { icon: "💫", text: "100+ Clients Guided Across India" },
+    { icon: "💫", text: "6+ Clients Guided Across India" },
   ];
 
   return (
