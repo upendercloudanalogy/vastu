@@ -25,7 +25,7 @@ const services = [
     title: "Name Correction",
     description: "Your name vibrates at a specific frequency. Aligning it with your birth number can transform your luck, relationships, and professional success.",
     features: ["Name Vibration Analysis", "Numerological Compatibility", "Business Name Suggestions", "Baby Name Guidance"],
-    color: "#82CFFF",
+    color: "#1565C0",
     gradient: "linear-gradient(135deg, rgba(130,207,255,0.15), rgba(66,165,250,0.2))",
     symbol: "⑨",
   },
@@ -39,7 +39,7 @@ const steps = [
 
 export default function ServicesSection() {
   return (
-    <section style={{ padding: "clamp(60px,10vw,100px) clamp(16px,5vw,24px)", background: "#020C18", position: "relative" }}>
+    <section style={{ padding: "clamp(60px,10vw,100px) clamp(16px,5vw,24px)", background: "#EFF6FF", position: "relative" }}>
 
       {/* Vastu compass watermark — top-right */}
       <svg
@@ -97,13 +97,13 @@ export default function ServicesSection() {
           <span style={{ color: "#42A5F5", fontSize: "0.85rem", letterSpacing: "3px", textTransform: "uppercase" as const, fontWeight: 600, display: "block", marginBottom: "16px" }}>
             ✦ What I Offer ✦
           </span>
-          <h2 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.8rem,4vw,3rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "16px", lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.8rem,4vw,3rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "16px", lineHeight: 1.2 }}>
             Services Tailored to{" "}
-            <span style={{ background: "linear-gradient(135deg,#FFFFFF,#B3E5FC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#1565C0,#42A5F5)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Your Journey
             </span>
           </h2>
-          <p style={{ color: "#90A4AE", fontSize: "clamp(0.9rem,2vw,1rem)", maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
+          <p style={{ color: "#4B7BA8", fontSize: "clamp(0.9rem,2vw,1rem)", maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
             From personal numerology readings to comprehensive Vastu consultations — every service is personalized to your unique energetic blueprint.
           </p>
         </div>
@@ -126,16 +126,16 @@ export default function ServicesSection() {
                 {service.icon}
               </div>
 
-              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.2rem,3vw,1.5rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "12px" }}>
+              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.2rem,3vw,1.5rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "12px" }}>
                 {service.title}
               </h3>
-              <p style={{ color: "#90A4AE", fontSize: "clamp(0.85rem,2vw,0.9rem)", lineHeight: 1.75, marginBottom: "24px" }}>
+              <p style={{ color: "#4B7BA8", fontSize: "clamp(0.85rem,2vw,0.9rem)", lineHeight: 1.75, marginBottom: "24px" }}>
                 {service.description}
               </p>
 
               <ul style={{ listStyle: "none", marginBottom: "28px" }}>
                 {service.features.map((f) => (
-                  <li key={f} style={{ display: "flex", alignItems: "center", gap: "10px", color: "#B3E5FC", fontSize: "clamp(0.8rem,2vw,0.875rem)", marginBottom: "10px" }}>
+                  <li key={f} style={{ display: "flex", alignItems: "center", gap: "10px", color: "#1565C0", fontSize: "clamp(0.8rem,2vw,0.875rem)", marginBottom: "10px" }}>
                     <span style={{ color: service.color, flexShrink: 0, fontSize: "0.7rem" }}>▸</span>
                     {f}
                   </li>
@@ -155,7 +155,7 @@ export default function ServicesSection() {
             { symbol: "▣", name: "Prithvi", label: "Earth", color: "#8B6914" },
             { symbol: "≋", name: "Jal",     label: "Water", color: "#1E88E5" },
             { symbol: "▲", name: "Agni",    label: "Fire",  color: "#C0392B" },
-            { symbol: "○", name: "Vayu",    label: "Air",   color: "#82CFFF" },
+            { symbol: "○", name: "Vayu",    label: "Air",   color: "#1565C0" },
             { symbol: "◉", name: "Akash",   label: "Space", color: "#9B59B6" },
           ] as const).map((el) => (
             <div key={el.name} style={{ textAlign: "center", opacity: 0.7 }}>
@@ -163,7 +163,7 @@ export default function ServicesSection() {
                 {el.symbol}
               </div>
               <div style={{ color: el.color, fontSize: "0.72rem", fontWeight: 600, letterSpacing: "1px" }}>{el.name}</div>
-              <div style={{ color: "#607D8B", fontSize: "0.65rem" }}>{el.label}</div>
+              <div style={{ color: "#5B8DB8", fontSize: "0.65rem" }}>{el.label}</div>
             </div>
           ))}
         </div>
@@ -179,14 +179,14 @@ export default function ServicesSection() {
             <span style={{ color: "#42A5F5", fontSize: "0.85rem", letterSpacing: "3px", textTransform: "uppercase" as const, fontWeight: 600, display: "block", marginBottom: "16px" }}>
               ✦ Simple Process ✦
             </span>
-            <h2 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.6rem,3.5vw,2.5rem)", fontWeight: 700, color: "#EDF4FF" }}>
-              How It <span style={{ background: "linear-gradient(135deg,#FFFFFF,#B3E5FC)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Works</span>
+            <h2 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.6rem,3.5vw,2.5rem)", fontWeight: 700, color: "#1A3A5C" }}>
+              How It <span style={{ background: "linear-gradient(135deg,#1565C0,#42A5F5)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Works</span>
             </h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,240px),1fr))", gap: "clamp(16px,4vw,24px)" }}>
             {steps.map((step, idx) => (
-              <div key={step.step} style={{ textAlign: "center", padding: "clamp(24px,4vw,36px) clamp(16px,4vw,24px)", background: "rgba(7,26,48,0.6)", border: "1px solid #143D7A", borderRadius: "20px", position: "relative", overflow: "hidden" }}>
+              <div key={step.step} style={{ textAlign: "center", padding: "clamp(24px,4vw,36px) clamp(16px,4vw,24px)", background: "rgba(219,234,254,0.8)", border: "1px solid #93C5FD", borderRadius: "20px", position: "relative", overflow: "hidden" }}>
 
                 {/* Background sacred symbol */}
                 <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(4rem,10vw,7rem)", fontWeight: 700, color: "rgba(30,136,229,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none" }}>
@@ -204,10 +204,10 @@ export default function ServicesSection() {
                 <div style={{ fontSize: "clamp(32px,6vw,44px)", marginBottom: "16px", position: "relative", zIndex: 1, animation: `floatY ${4 + idx * 0.5}s ease-in-out infinite` }}>
                   {step.icon}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.1rem,3vw,1.35rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "10px", position: "relative", zIndex: 1 }}>
+                <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.1rem,3vw,1.35rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "10px", position: "relative", zIndex: 1 }}>
                   {step.title}
                 </h3>
-                <p style={{ color: "#90A4AE", fontSize: "clamp(0.82rem,2vw,0.9rem)", lineHeight: 1.7, position: "relative", zIndex: 1 }}>
+                <p style={{ color: "#4B7BA8", fontSize: "clamp(0.82rem,2vw,0.9rem)", lineHeight: 1.7, position: "relative", zIndex: 1 }}>
                   {step.desc}
                 </p>
               </div>

@@ -53,11 +53,12 @@ export default function AnimatedNumbers({ count = 20 }: { count?: number }) {
             left: num.left,
             bottom: "-60px",
             fontSize: num.size,
-            opacity: num.useWhite ? 0.07 : 0.09,
-            color: num.useWhite ? "#FFFFFF" : "#42A5F5",
+            opacity: num.useWhite ? 0.13 : 0.16,
+            color: num.useWhite ? "#D4AF37" : "#42A5F5",
             fontFamily: "Georgia, serif",
             fontWeight: 700,
             animation: `floatUp ${num.duration} linear ${num.delay} infinite`,
+          // floatUp defined in globals.css
             userSelect: "none",
           }}
         >

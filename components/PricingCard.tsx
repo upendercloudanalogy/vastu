@@ -22,8 +22,8 @@ export default function PricingCard({ title, price, description, features, isPre
             top: "0",
             left: "50%",
             transform: "translateX(-50%)",
-            background: isPremium ? "linear-gradient(135deg, #FFFFFF, #E3F2FD)" : "linear-gradient(135deg, #1E88E5, #42A5F5)",
-            color: isPremium ? "#020C18" : "#FFFFFF",
+            background: isPremium ? "linear-gradient(135deg, #D4AF37, #E8C840)" : "linear-gradient(135deg, #1E88E5, #42A5F5)",
+            color: "#FFFFFF",
             padding: "4px 20px",
             borderRadius: "20px",
             fontSize: "0.72rem",
@@ -31,7 +31,7 @@ export default function PricingCard({ title, price, description, features, isPre
             letterSpacing: "1px",
             textTransform: "uppercase" as const,
             whiteSpace: "nowrap",
-            boxShadow: isPremium ? "0 4px 16px rgba(255,255,255,0.2)" : "0 4px 12px rgba(30,136,229,0.4)",
+            boxShadow: isPremium ? "0 4px 16px rgba(212,175,55,0.4)" : "0 4px 12px rgba(30,136,229,0.4)",
             zIndex: 10,
           }}
         >
@@ -42,23 +42,24 @@ export default function PricingCard({ title, price, description, features, isPre
     <div
       style={{
         background: isPremium
-          ? "linear-gradient(135deg, #0D47A1 0%, #071A30 50%, #0F2E57 100%)"
-          : "linear-gradient(135deg, #071A30, #0A2040)",
-        border: isPremium ? "2px solid rgba(255,255,255,0.3)" : "1px solid #143D7A",
+          ? "linear-gradient(135deg, #EEF5FF 0%, #DBEAFE 50%, #EEF5FF 100%)"
+          : "linear-gradient(135deg, #DBEAFE, #BFDBFE)",
+        border: isPremium ? "2px solid rgba(212,175,55,0.5)" : "1px solid #93C5FD",
+        borderTop: isPremium ? "3px solid rgba(212,175,55,0.7)" : undefined,
         borderRadius: "20px",
         padding: "clamp(24px, 5vw, 36px) clamp(20px, 4vw, 28px)",
         position: "relative",
         overflow: "hidden",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
         boxShadow: isPremium
-          ? "0 0 40px rgba(255,255,255,0.08), 0 20px 60px rgba(30,136,229,0.2)"
-          : "0 10px 40px rgba(0,0,0,0.35)",
+          ? "0 0 40px rgba(212,175,55,0.12), 0 20px 60px rgba(30,136,229,0.18)"
+          : "0 8px 32px rgba(30,136,229,0.12)",
         flex: 1,
       }}
       className={isPremium ? "pricing-card-premium" : "pricing-card"}
     >
       {/* Sacred symbol watermark */}
-      <div style={{ position: "absolute", top: "12px", right: "16px", fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(3rem, 7vw, 4.5rem)", fontWeight: 700, color: isPremium ? "rgba(255,255,255,0.04)" : "rgba(30,136,229,0.06)", lineHeight: 1, userSelect: "none", pointerEvents: "none" }}>
+      <div style={{ position: "absolute", top: "12px", right: "16px", fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(3rem, 7vw, 4.5rem)", fontWeight: 700, color: isPremium ? "rgba(212,175,55,0.10)" : "rgba(30,136,229,0.06)", lineHeight: 1, userSelect: "none", pointerEvents: "none" }}>
         ✦
       </div>
 
@@ -72,7 +73,7 @@ export default function PricingCard({ title, price, description, features, isPre
           fontFamily: "var(--font-cormorant), Georgia, serif",
           fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
           fontWeight: 700,
-          color: isPremium ? "#FFFFFF" : "#EDF4FF",
+          color: "#1A3A5C",
           marginBottom: "8px",
           position: "relative",
           zIndex: 1,
@@ -82,7 +83,7 @@ export default function PricingCard({ title, price, description, features, isPre
       </h3>
 
       {/* Description */}
-      <p style={{ color: isPremium ? "rgba(179,229,252,0.8)" : "#90A4AE", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", marginBottom: "24px", position: "relative", zIndex: 1 }}>
+      <p style={{ color: "#4B7BA8", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", marginBottom: "24px", position: "relative", zIndex: 1 }}>
         {description}
       </p>
 
@@ -94,8 +95,8 @@ export default function PricingCard({ title, price, description, features, isPre
             fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 700,
             background: isPremium
-              ? "linear-gradient(135deg, #FFFFFF, #B3E5FC)"
-              : "linear-gradient(135deg, #42A5F5, #1E88E5)",
+              ? "linear-gradient(135deg, #C9932A, #E8B84B, #D4AF37)"
+              : "linear-gradient(135deg, #1565C0, #42A5F5)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -107,7 +108,7 @@ export default function PricingCard({ title, price, description, features, isPre
       </div>
 
       {/* Sacred thin divider */}
-      <div style={{ height: "1px", background: isPremium ? "linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent)" : "linear-gradient(to right, transparent, rgba(30,136,229,0.25), transparent)", marginBottom: "20px" }} />
+      <div style={{ height: "1px", background: isPremium ? "linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent)" : "linear-gradient(to right, transparent, rgba(30,136,229,0.25), transparent)", marginBottom: "20px" }} />
 
       {/* Features */}
       <ul style={{ listStyle: "none", marginBottom: "28px", position: "relative", zIndex: 1 }}>
@@ -118,13 +119,13 @@ export default function PricingCard({ title, price, description, features, isPre
               display: "flex",
               alignItems: "flex-start",
               gap: "10px",
-              color: "#EDF4FF",
+              color: "#1A3A5C",
               fontSize: "clamp(0.82rem, 2vw, 0.9rem)",
               marginBottom: "10px",
               lineHeight: 1.4,
             }}
           >
-            <span style={{ color: isPremium ? "#82CFFF" : "#42A5F5", marginTop: "2px", flexShrink: 0 }}>▸</span>
+            <span style={{ color: isPremium ? "#C9932A" : "#1E88E5", marginTop: "2px", flexShrink: 0 }}>▸</span>
             {feature}
           </li>
         ))}
@@ -147,7 +148,8 @@ export default function PricingCard({ title, price, description, features, isPre
         }
         .pricing-card-premium:hover {
           transform: translateY(-6px);
-          box-shadow: 0 0 60px rgba(255, 255, 255, 0.15), 0 20px 60px rgba(30, 136, 229, 0.3);
+          box-shadow: 0 0 40px rgba(212,175,55,0.2), 0 20px 60px rgba(30, 136, 229, 0.25);
+          border-color: rgba(212,175,55,0.8) !important;
         }
       `}</style>
     </div>

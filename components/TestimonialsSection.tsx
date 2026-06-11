@@ -102,7 +102,7 @@ export default function TestimonialsSection({ limit }: { limit?: number }) {
             &ldquo;
           </div>
 
-          <p style={{ color: "#B3E5FC", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", lineHeight: 1.75, margin: "8px 0 18px", fontStyle: "italic", position: "relative", zIndex: 1 }}>
+          <p style={{ color: "#1565C0", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", lineHeight: 1.75, margin: "8px 0 18px", fontStyle: "italic", position: "relative", zIndex: 1 }}>
             {t.review}
           </p>
 
@@ -131,8 +131,8 @@ export default function TestimonialsSection({ limit }: { limit?: number }) {
               {t.name[0]}
             </div>
             <div>
-              <div style={{ color: "#EDF4FF", fontWeight: 600, fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>{t.name}</div>
-              <div style={{ color: "#607D8B", fontSize: "clamp(0.7rem, 1.8vw, 0.78rem)", marginTop: "2px" }}>
+              <div style={{ color: "#1A3A5C", fontWeight: 600, fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>{t.name}</div>
+              <div style={{ color: "#5B8DB8", fontSize: "clamp(0.7rem, 1.8vw, 0.78rem)", marginTop: "2px" }}>
                 <span style={{ color: "#42A5F5", marginRight: "4px" }}>✦</span>
                 {t.city} · {t.service}
               </div>

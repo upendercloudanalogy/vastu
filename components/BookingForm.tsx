@@ -88,19 +88,19 @@ export default function BookingForm() {
         style={{
           textAlign: "center",
           padding: "clamp(32px, 6vw, 48px) clamp(20px, 5vw, 24px)",
-          background: "linear-gradient(135deg, #071A30, #0A2040)",
+          background: "linear-gradient(135deg, #DBEAFE, #BFDBFE)",
           border: "1px solid rgba(37, 211, 102, 0.3)",
           borderRadius: "20px",
         }}
       >
         <div style={{ fontSize: "48px", marginBottom: "16px" }}>✅</div>
-        <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.4rem, 4vw, 1.8rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "12px" }}>
+        <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1.4rem, 4vw, 1.8rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "12px" }}>
           Request Sent!
         </h3>
-        <p style={{ color: "#90A4AE", marginBottom: "8px", lineHeight: 1.7, fontSize: "clamp(0.88rem, 2vw, 1rem)" }}>
+        <p style={{ color: "#4B7BA8", marginBottom: "8px", lineHeight: 1.7, fontSize: "clamp(0.88rem, 2vw, 1rem)" }}>
           Your booking details have been sent to Monika via WhatsApp and email.
         </p>
-        <p style={{ color: "#90A4AE", marginBottom: "24px", fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>
+        <p style={{ color: "#4B7BA8", marginBottom: "24px", fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>
           She will reach out to schedule your session shortly.
         </p>
         {error && (
@@ -131,7 +131,7 @@ export default function BookingForm() {
           { id: "city", label: "City / Place *", type: "text", placeholder: "Your city" },
         ].map(({ id, label, type, placeholder }) => (
           <div key={id}>
-            <label htmlFor={id} style={{ display: "block", color: "#82CFFF", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
+            <label htmlFor={id} style={{ display: "block", color: "#1565C0", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
               {label}
             </label>
             <input
@@ -148,7 +148,7 @@ export default function BookingForm() {
         ))}
 
         <div>
-          <label htmlFor="service" style={{ display: "block", color: "#82CFFF", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
+          <label htmlFor="service" style={{ display: "block", color: "#1565C0", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
             Service Type *
           </label>
           <select id="service" name="service" value={form.service} onChange={handleChange} required className="mystic-input">
@@ -165,7 +165,7 @@ export default function BookingForm() {
       </div>
 
       <div style={{ marginBottom: "clamp(20px, 4vw, 28px)" }}>
-        <label htmlFor="message" style={{ display: "block", color: "#82CFFF", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
+        <label htmlFor="message" style={{ display: "block", color: "#1565C0", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", fontWeight: 600, marginBottom: "8px", letterSpacing: "0.5px" }}>
           Message (Optional)
         </label>
         <textarea
@@ -194,7 +194,7 @@ export default function BookingForm() {
         {sending ? "Sending..." : "💬 Book via WhatsApp"}
       </button>
 
-      <p style={{ color: "#607D8B", fontSize: "0.8rem", marginTop: "14px", textAlign: "center" }}>
+      <p style={{ color: "#5B8DB8", fontSize: "0.8rem", marginTop: "14px", textAlign: "center" }}>
         Your details are sent to Monika via WhatsApp + email automatically.
       </p>
     </form>

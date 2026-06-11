@@ -112,11 +112,11 @@ export default function StructuredData({ breadcrumbs, pageType = "home" }: Struc
         },
         {
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Online Vastu Guidance Session",
-            description: "45-minute online Vastu Shastra consultation — home energy assessment, room direction analysis, Vastu remedies without major renovation. Serving Faridabad, Delhi NCR & pan India.",
-          },
+          // itemOffered: {
+          //   "@type": "Service",
+          //   name: "Online Vastu Guidance Session",
+          //   description: "45-minute online Vastu Shastra consultation — home energy assessment, room direction analysis, Vastu remedies without major renovation. Serving Faridabad, Delhi NCR & pan India.",
+          // },
           price: "11000",
           priceCurrency: "INR",
           availability: "https://schema.org/InStock",

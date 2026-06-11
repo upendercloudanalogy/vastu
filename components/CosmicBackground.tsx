@@ -57,7 +57,7 @@ export default function CosmicBackground() {
           background:
             "radial-gradient(ellipse at 15% 20%, rgba(30,136,229,0.06) 0%, transparent 45%)," +
             "radial-gradient(ellipse at 85% 80%, rgba(13,71,161,0.05) 0%, transparent 45%)," +
-            "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.015) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.08) 0%, transparent 60%)",
         }}
       />
 
@@ -76,18 +76,18 @@ export default function CosmicBackground() {
         }}
       />
 
-      {/* Om symbol — giant centered watermark */}
+      {/* Om symbol — giant centered watermark with pulse */}
       <div
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-50%,-50%)",
           fontSize: "min(50vw,500px)",
-          color: "rgba(212,175,55,0.03)",
+          color: "rgba(212,175,55,0.20)",
           userSelect: "none",
           lineHeight: 1,
           fontFamily: "Georgia, serif",
+          animation: "omPulse 8s ease-in-out infinite",
         }}
       >
         ॐ
@@ -104,8 +104,8 @@ export default function CosmicBackground() {
             width: `${star.s + 1}px`,
             height: `${star.s + 1}px`,
             borderRadius: "50%",
-            background: "#B3E5FC",
-            boxShadow: `0 0 ${star.s * 2 + 2}px rgba(179,229,252,0.8)`,
+            background: "#1E88E5",
+            boxShadow: `0 0 ${star.s * 2 + 2}px rgba(30,136,229,0.5)`,
             animation: `twinkle ${star.r} ease-in-out ${star.d} infinite`,
           }}
         />
@@ -146,37 +146,37 @@ export default function CosmicBackground() {
         <polyline
           points="7,1 23,3 41,2 59,5"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
         <polyline
           points="77,1 91,4 84,15"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
         <polyline
           points="3,12 17,15 10,24"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
         <polyline
           points="95,19 89,30 76,38"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
         <polyline
           points="5,82 19,86 36,84"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
         <polyline
           points="54,88 71,83 87,91"
           fill="none"
-          stroke="rgba(179,229,252,0.045)"
+          stroke="rgba(212,175,55,0.25)"
           strokeWidth="0.15"
         />
       </svg>

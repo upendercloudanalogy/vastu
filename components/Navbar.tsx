@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/ratings", label: "Reviews" },
   { href: "/payments", label: "Pricing" },
+  { href: "/terms-and-conditions", label: "Terms" },
 ];
 
 export default function Navbar() {
@@ -42,10 +43,10 @@ export default function Navbar() {
           zIndex: 999,
           transition: "background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
           background: scrolled
-            ? "rgba(2, 12, 24, 0.96)"
-            : "rgba(2, 12, 24, 0.85)",
+            ? "rgba(239, 246, 255, 0.96)"
+            : "rgba(239, 246, 255, 0.85)",
           borderBottom: scrolled
-            ? "1px solid rgba(20, 61, 122, 0.7)"
+            ? "1px solid rgba(147, 197, 253, 0.7)"
             : "1px solid transparent",
           boxShadow: scrolled
             ? "0 4px 30px rgba(30, 136, 229, 0.12)"
@@ -71,9 +72,9 @@ export default function Navbar() {
                 fontFamily: "var(--font-cormorant), Georgia, serif",
                 fontSize: "1.6rem",
                 fontWeight: 700,
-                background: "linear-gradient(135deg, #FFFFFF, #B3E5FC)",
+                background: "linear-gradient(135deg, #1565C0, #1E88E5)",
                 WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                // WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
@@ -88,13 +89,13 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 style={{
-                  color: pathname === link.href ? "#FFFFFF" : "#B3E5FC",
+                  color: pathname === link.href ? "#1565C0" : "#2A5F8F",
                   textDecoration: "none",
                   padding: "8px 16px",
                   borderRadius: "8px",
                   fontSize: "0.95rem",
                   fontWeight: pathname === link.href ? 600 : 400,
-                  background: pathname === link.href ? "rgba(30, 136, 229, 0.18)" : "transparent",
+                  background: pathname === link.href ? "rgba(30, 136, 229, 0.15)" : "transparent",
                   transition: "all 0.2s ease",
                 }}
               >
@@ -135,13 +136,13 @@ export default function Navbar() {
               onClick={closeMenu}
               style={{
                 display: "block",
-                color: pathname === link.href ? "#FFFFFF" : "#B3E5FC",
+                color: pathname === link.href ? "#1565C0" : "#2A5F8F",
                 textDecoration: "none",
                 padding: "14px 16px",
                 borderRadius: "8px",
                 fontSize: "1rem",
                 marginBottom: "4px",
-                background: pathname === link.href ? "rgba(30, 136, 229, 0.18)" : "transparent",
+                background: pathname === link.href ? "rgba(30, 136, 229, 0.15)" : "transparent",
               }}
             >
               {link.label}

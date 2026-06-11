@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "linear-gradient(180deg, #020C18 0%, #010810 100%)",
-        borderTop: "1px solid #143D7A",
+        background: "linear-gradient(180deg, #F0F7FF 0%, #EEF5FF 100%)",
+        borderTop: "1px solid rgba(147,197,253,0.5)",
         paddingTop: "clamp(40px, 8vw, 60px)",
         paddingBottom: "32px",
         position: "relative",
@@ -48,7 +48,7 @@ export default function Footer() {
                   fontFamily: "var(--font-cormorant), Georgia, serif",
                   fontSize: "clamp(1.3rem, 3vw, 1.6rem)",
                   fontWeight: 700,
-                  background: "linear-gradient(135deg, #FFFFFF, #B3E5FC)",
+                  background: "linear-gradient(135deg, #1565C0, #1E88E5)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -57,14 +57,14 @@ export default function Footer() {
                 Monika
               </span>
             </div>
-            <p style={{ color: "#90A4AE", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", lineHeight: 1.7, maxWidth: "260px" }}>
+            <p style={{ color: "#1A3A5C", fontWeight: 600, fontSize: "clamp(0.92rem, 2vw, 1rem)", lineHeight: 1.7, maxWidth: "260px" }}>
               Certified Numerologist & Vastu Shastra Expert. Helping you unlock your destiny through ancient wisdom.
             </p>
             <div style={{ marginTop: "16px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              <span style={{ background: "rgba(30,136,229,0.15)", border: "1px solid #143D7A", borderRadius: "20px", padding: "4px 10px", fontSize: "0.72rem", color: "#82CFFF" }}>
+              <span style={{ background: "rgba(30,136,229,0.08)", border: "1px solid rgba(66,165,250,0.3)", borderRadius: "20px", padding: "4px 10px", fontSize: "0.72rem", color: "#4B7BA8" }}>
                 🎓 Masters in Numerology
               </span>
-              <span style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "20px", padding: "4px 10px", fontSize: "0.72rem", color: "#EDF4FF" }}>
+              <span style={{ background: "rgba(30,136,229,0.08)", border: "1px solid rgba(66,165,250,0.25)", borderRadius: "20px", padding: "4px 10px", fontSize: "0.72rem", color: "#1A3A5C" }}>
                 🏡 Vastu Expert
               </span>
             </div>
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ color: "#42A5F5", fontSize: "0.6rem" }}>✦</span>
               Quick Links
             </h4>
@@ -91,9 +91,10 @@ export default function Footer() {
                 { href: "/payments", label: "Pricing & Services" },
                 { href: "/ratings", label: "Client Reviews" },
                 { href: "/book", label: "Book Consultation" },
+                { href: "/terms-and-conditions", label: "Terms & Conditions" },
               ].map((link) => (
                 <li key={link.href} style={{ marginBottom: "10px" }}>
-                  <Link href={link.href} style={{ color: "#90A4AE", textDecoration: "none", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Link href={link.href} style={{ color: "#4B7BA8", textDecoration: "none", fontSize: "clamp(0.82rem, 2vw, 0.9rem)", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ color: "#1E88E5", fontSize: "0.55rem", flexShrink: 0 }}>▶</span>
                     {link.label}
                   </Link>
@@ -104,7 +105,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ color: "#42A5F5", fontSize: "0.6rem" }}>✦</span>
               Services
             </h4>
@@ -112,7 +113,7 @@ export default function Footer() {
               {["Numerology Reading", "Vastu Consultation", "Name Correction", "New Home Vastu", "Commercial Vastu", "Destiny Analysis"].map((s) => (
                 <li key={s} style={{ marginBottom: "10px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
                   <span style={{ color: "#1E88E5", fontSize: "0.55rem", marginTop: "6px", flexShrink: 0 }}>✦</span>
-                  <span style={{ color: "#90A4AE", fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>{s}</span>
+                  <span style={{ color: "#4B7BA8", fontSize: "clamp(0.82rem, 2vw, 0.9rem)" }}>{s}</span>
                 </li>
               ))}
             </ul>
@@ -120,7 +121,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#EDF4FF", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <h4 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(1rem, 2.5vw, 1.2rem)", fontWeight: 700, color: "#1A3A5C", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ color: "#42A5F5", fontSize: "0.6rem" }}>✦</span>
               Connect
             </h4>
@@ -140,7 +141,7 @@ export default function Footer() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=nikhilkhatkar34@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "flex", alignItems: "center", gap: "12px", color: "#90A4AE", textDecoration: "none", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", minWidth: 0 }}
+                style={{ display: "flex", alignItems: "center", gap: "12px", color: "#4B7BA8", textDecoration: "none", fontSize: "clamp(0.78rem, 2vw, 0.85rem)", minWidth: 0 }}
               >
                 <span style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(30,136,229,0.15)", border: "1px solid rgba(30,136,229,0.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", flexShrink: 0 }}>
                   ✉️
@@ -158,10 +159,10 @@ export default function Footer() {
         <div className="sacred-divider" style={{ marginBottom: "24px" }}><span className="sacred-divider-text">✦ ◯ ✦</span></div>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
-          <p style={{ color: "#607D8B", fontSize: "clamp(0.78rem, 2vw, 0.85rem)" }}>
+          <p style={{ color: "#4B7BA8", fontSize: "clamp(0.78rem, 2vw, 0.85rem)" }}>
             © {currentYear} Monika Numerology & Vastu. All rights reserved.
           </p>
-          <p style={{ color: "#607D8B", fontSize: "clamp(0.78rem, 2vw, 0.85rem)" }}>
+          <p style={{ color: "#4B7BA8", fontSize: "clamp(0.78rem, 2vw, 0.85rem)" }}>
             ✦ Guided by the wisdom of numbers
           </p>
         </div>
