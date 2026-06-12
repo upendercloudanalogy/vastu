@@ -6,18 +6,21 @@ import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Book Vastu or Numerology Session | Monika Faridabad | Shivoham Guidance Faridabad",
-  description: "Book Vastu or numerology consultation with Shivoham Guidance, Faridabad. WhatsApp response in 24 hours. Sessions from ₹2,100. Online — serving all of India.",
+  description: "Book Vastu or numerology consultation with Shivoham Guidance, Faridabad. WhatsApp response in 24 hours. Sessions from ₹599. Online — serving all of India.",
   alternates: { canonical: "https://www.shivohamguidance.com/book" },
 };
 
 const packages = [
-  { name:"Mini Consultation Call",      price:"₹2,100",  icon:"🔢", highlight:false },
-  { name:"Detailed Numerology Session", price:"₹5,100",  icon:"✦",  highlight:false },
-  { name:"Vastu Guidance (Online)",     price:"₹11,000", icon:"🏡", highlight:false },
-  { name:"Old Home Vastu",              price:"₹25,000", icon:"🏠", highlight:false },
-  { name:"New Home Vastu Shastra",      price:"₹45,000", icon:"🌟", highlight:true  },
-  { name:"Commercial Vastu",            price:"₹71,000", icon:"🏢", highlight:false },
+  { name:"Mini Consultation Call",      price:"₹599",    originalPrice:"₹2,100",  icon:"🔢", highlight:false },
+  { name:"Detailed Numerology Session", price:"₹1,099",  originalPrice:"₹5,100",  icon:"✦",  highlight:false },
+  { name:"Vastu Guidance (Online)",     price:"₹4,999",  originalPrice:"₹11,000", icon:"🏡", highlight:false },
+  { name:"Old Home Vastu",              price:"₹12,999", originalPrice:"₹25,000", icon:"🏠", highlight:false },
+  { name:"New Home Vastu Shastra",      price:"₹20,999", originalPrice:"₹45,000", icon:"🌟", highlight:true  },
+  { name:"Commercial Vastu",            price:"₹49,999", originalPrice:"₹71,000", icon:"🏢", highlight:false },
 ];
+
+const parsePrice = (p: string) => Number(p.replace(/[^0-9.]/g, ""));
+const discountPct = (orig: string, now: string) => Math.round((1 - parsePrice(now) / parsePrice(orig)) * 100);
 
 export default function BookPage() {
   return (
@@ -112,12 +115,18 @@ export default function BookPage() {
                 <span style={{ color:"rgba(212,175,55,0.8)" }}>✦</span> Our Packages
               </h3>
               {packages.map((pkg,i) => (
-                <div key={pkg.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom: i < packages.length-1 ? "1px solid rgba(147,197,253,0.4)" : "none" }}>
+                <div key={pkg.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", padding:"10px 0", borderBottom: i < packages.length-1 ? "1px solid rgba(147,197,253,0.4)" : "none" }}>
                   <div style={{ display:"flex", alignItems:"center", gap:"8px" }}>
                     <span style={{ fontSize:"clamp(12px,2.5vw,14px)" }}>{pkg.icon}</span>
                     <span style={{ color:"#1565C0", fontSize:"clamp(0.78rem,2vw,0.88rem)", fontWeight: pkg.highlight ? 600 : 400 }}>{pkg.name}</span>
                   </div>
-                  <span style={{ color: pkg.highlight ? "#C9932A" : "#42A5F5", fontWeight:700, fontSize:"clamp(0.82rem,2vw,0.92rem)", flexShrink:0, marginLeft:"8px" }}>{pkg.price}</span>
+                  <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-end", flexShrink:0, marginLeft:"8px" }}>
+                    <div style={{ display:"flex", alignItems:"center", gap:"6px" }}>
+                      <span style={{ color:"#94A3B8", fontSize:"clamp(0.72rem,1.8vw,0.8rem)", textDecoration:"line-through", textDecorationColor: pkg.highlight ? "rgba(201,147,42,0.7)" : "rgba(21,101,192,0.6)" }}>{pkg.originalPrice}</span>
+                      <span style={{ color: pkg.highlight ? "#C9932A" : "#42A5F5", fontWeight:700, fontSize:"clamp(0.82rem,2vw,0.92rem)" }}>{pkg.price}</span>
+                    </div>
+                    <span style={{ color:"#16A34A", fontSize:"clamp(0.66rem,1.6vw,0.72rem)", fontWeight:700, marginTop:"2px" }}>{discountPct(pkg.originalPrice, pkg.price)}% OFF</span>
+                  </div>
                 </div>
               ))}
             </div>

@@ -6,14 +6,14 @@ import emailjs from "@emailjs/browser";
 
 const services = [
   { group: "🔢 Numerology", options: [
-    { label: "Mini Consultation Call — ₹2,100", value: "Mini Consultation Call" },
-    { label: "Detailed Numerology Session — ₹5,100", value: "Detailed Numerology Session" },
+    { label: "Mini Consultation Call — ₹599", value: "Mini Consultation Call" },
+    { label: "Detailed Numerology Session — ₹1,099", value: "Detailed Numerology Session" },
   ]},
   { group: "🏡 Vastu Shastra", options: [
-    { label: "Vastu Guidance Session (Online) — ₹11,000", value: "Vastu Guidance Session" },
-    { label: "Old Home Vastu — ₹25,000", value: "Old Home Vastu" },
-    { label: "New Home Vastu Shastra — ₹45,000", value: "New Home Vastu Shastra" },
-    { label: "Commercial Vastu (Hotel/Hospital/Shop etc.) — ₹71,000", value: "Commercial Vastu" },
+    { label: "Vastu Guidance Session (Online) — ₹4,999", value: "Vastu Guidance Session" },
+    { label: "Old Home Vastu — ₹12,999", value: "Old Home Vastu" },
+    { label: "New Home Vastu Shastra — ₹20,999", value: "New Home Vastu Shastra" },
+    { label: "Commercial Vastu (Hotel/Hospital/Shop etc.) — ₹49,999", value: "Commercial Vastu" },
   ]},
 ];
 

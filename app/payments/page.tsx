@@ -6,19 +6,19 @@ import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Vastu & Numerology Fees in Faridabad | Shivoham Guidance | Monika Faridabad",
-  description: "Vastu & numerology fees by Shivoham Guidance, Faridabad. Numerology from ₹2,100. Vastu for home, new construction & commercial properties. Serving pan India.",
+  description: "Vastu & numerology fees by Shivoham Guidance, Faridabad. Numerology from ₹599. Vastu for home, new construction & commercial properties. Serving pan India.",
   alternates: { canonical: "https://www.shivohamguidance.com/payments" },
 };
 
 const numerologyPackages = [
-  { title:"Mini Consultation Call", price:"₹2,100", description:"Quick Numerology Guidance", features:["Life Path Number Overview","Lucky Numbers & Dates","Career or Relationship Query","Key Insights for Your Question","30-min WhatsApp Call"] },
-  { title:"Detailed Numerology Session", price:"₹5,100", description:"In-Depth Personal Numerology", features:["Full Life Path Analysis","Destiny & Soul Number Reading","Personal Year Forecast","Career, Finance & Relationship Insights","Name Vibration Check","60-min WhatsApp Session"], badge:"Most Popular" },
+  { title:"Mini Consultation Call", price:"₹599", originalPrice:"₹2,100", description:"Quick Numerology Guidance", features:["Life Path Number Overview","Lucky Numbers & Dates","Career or Relationship Query","Key Insights for Your Question"] },
+  { title:"Detailed Numerology Session", price:"₹1,099", originalPrice:"₹5,100", description:"In-Depth Personal Numerology", features:["Full Life Path Analysis","Destiny & Soul Number Reading","Personal Year Forecast","Career, Finance & Relationship Insights","Name Vibration Check"], badge:"Most Popular" },
 ];
 const vastuPackages = [
-  { title:"Vastu Guidance Session", price:"₹11,000", description:"Online Vastu Consultation", features:["Home Energy Assessment (Online)","Room Direction Analysis","Vastu Remedies & Corrections","Lucky Colors & Directions","45-min WhatsApp Session"] },
-  { title:"Old Home Vastu", price:"₹25,000", description:"Vastu for Existing Homes", features:["Complete On-Site Assessment","Room-by-Room Energy Analysis","Remedies Without Major Renovation","Main Door & Kitchen Direction","Bedroom Placement Guidance","Detailed Vastu Report"] },
-  { title:"New Home Vastu Shastra", price:"₹45,000", description:"Vastu for New Construction", features:["Blueprint & Planning Stage Review","Plot & Direction Analysis","Complete Layout Optimization","Vastu-Compliant Room Placement","Materials & Colors Guidance","Full Written Report + Follow-up"], isPremium:true, badge:"Best Value" },
-  { title:"Commercial Vastu", price:"₹71,000", description:"Hotel · Restaurant · Hospital · Clinic · Shop · Farm house · Dispensary", features:["Complete Commercial Assessment","Business Energy Optimization","Entry & Cash Counter Direction","Staff & Customer Flow Analysis","All Property Types Covered","Detailed Report + Follow-up"] },
+  { title:"Vastu Guidance Session", price:"₹4,999", originalPrice:"₹11,000", description:"Online Vastu Consultation", features:["Home Energy Assessment (Online)","Room Direction Analysis","Vastu Remedies & Corrections","Lucky Colors & Directions"] },
+  { title:"Old Home Vastu", price:"₹12,999", originalPrice:"₹25,000", description:"Vastu for Existing Homes", features:["Complete On-Site Assessment","Room-by-Room Energy Analysis","Remedies Without Major Renovation","Main Door & Kitchen Direction","Bedroom Placement Guidance","Detailed Vastu Report"] },
+  { title:"New Home Vastu Shastra", price:"₹20,999", originalPrice:"₹45,000", description:"Vastu for New Construction", features:["Blueprint & Planning Stage Review","Plot & Direction Analysis","Complete Layout Optimization","Vastu-Compliant Room Placement","Materials & Colors Guidance","Full Written Report + Follow-up"], isPremium:true, badge:"Best Value" },
+  { title:"Commercial Vastu", price:"₹49,999", originalPrice:"₹71,000", description:"Hotel · Restaurant · Hospital · Clinic · Shop · Farm house · Dispensary", features:["Complete Commercial Assessment","Business Energy Optimization","Entry & Cash Counter Direction","Staff & Customer Flow Analysis","All Property Types Covered","Detailed Report + Follow-up"] },
 ];
 const faqs = [
   { q:"How does the consultation work?", a:"After booking, Monika will contact you via WhatsApp to schedule your session. Numerology sessions are done over WhatsApp call. Vastu on-site visits are scheduled based on your location." },

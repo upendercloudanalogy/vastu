@@ -3,13 +3,20 @@ import Link from "next/link";
 interface PricingCardProps {
   title: string;
   price: string;
+  originalPrice?: string;
   description: string;
   features: string[];
   isPremium?: boolean;
   badge?: string;
 }
 
-export default function PricingCard({ title, price, description, features, isPremium = false, badge }: PricingCardProps) {
+const parsePrice = (p: string) => Number(p.replace(/[^0-9.]/g, ""));
+
+export default function PricingCard({ title, price, originalPrice, description, features, isPremium = false, badge }: PricingCardProps) {
+  const discountPct =
+    originalPrice && parsePrice(originalPrice) > 0
+      ? Math.round((1 - parsePrice(price) / parsePrice(originalPrice)) * 100)
+      : 0;
   return (
     /* Outer wrapper: position:relative so badge can anchor to it; paddingTop reserves badge space */
     <div style={{ paddingTop: badge ? "16px" : "0", display: "flex", flexDirection: "column", position: "relative" }}>
@@ -89,6 +96,38 @@ export default function PricingCard({ title, price, description, features, isPre
 
       {/* Price */}
       <div style={{ marginBottom: "24px", position: "relative", zIndex: 1 }}>
+        {originalPrice && (
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-cormorant), Georgia, serif",
+                fontSize: "clamp(1.1rem, 2.6vw, 1.5rem)",
+                fontWeight: 600,
+                color: "#94A3B8",
+                textDecoration: "line-through",
+                textDecorationColor: isPremium ? "rgba(201,147,42,0.7)" : "rgba(21,101,192,0.6)",
+                lineHeight: 1,
+              }}
+            >
+              {originalPrice}
+            </span>
+            <span
+              style={{
+                background: "rgba(34,197,94,0.12)",
+                color: "#16A34A",
+                border: "1px solid rgba(34,197,94,0.35)",
+                borderRadius: "20px",
+                padding: "3px 12px",
+                fontSize: "clamp(0.66rem, 1.6vw, 0.75rem)",
+                fontWeight: 700,
+                letterSpacing: "0.5px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {discountPct}% OFF
+            </span>
+          </div>
+        )}
         <span
           style={{
             fontFamily: "var(--font-cormorant), Georgia, serif",
@@ -105,6 +144,11 @@ export default function PricingCard({ title, price, description, features, isPre
         >
           {price}
         </span>
+        {/* {originalPrice && (
+          <div style={{ color: "#16A34A", fontSize: "clamp(0.74rem, 1.8vw, 0.85rem)", fontWeight: 600, marginTop: "6px" }}>
+            You save {discountPct}% (₹{(parsePrice(originalPrice) - parsePrice(price)).toLocaleString("en-IN")} off)
+          </div>
+        )} */}
       </div>
 
       {/* Sacred thin divider */}
